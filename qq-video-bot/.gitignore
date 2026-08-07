@@ -1,0 +1,10 @@
+.env
+.env.*
+!.env.example
+!.env.prod.example
+.venv/
+data/
+cache/
+__pycache__/
+*.py[cod]
+startup.*.log

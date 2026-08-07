@@ -1,0 +1,59 @@
+# Local distribution copy
+sharedTips/
+
+# NapCat is a separately installed third-party runtime. Its configuration may
+# contain QQ account IDs, access tokens, login state, and QR codes.
+NapCat.Shell/
+
+# Local environment and secrets
+**/.env
+**/.env.*
+!**/.env.example
+!**/.env.*.example
+**/*.pem
+**/*.key
+
+# Python virtual environments and bytecode
+**/.venv/
+**/venv/
+**/__pycache__/
+**/*.py[cod]
+**/*.pyd
+
+# Test, lint, type-check, and coverage caches
+**/.pytest_cache/
+**/.ruff_cache/
+**/.mypy_cache/
+**/.tox/
+**/.nox/
+**/.coverage
+**/htmlcov/
+
+# Build and packaging output
+**/build/
+**/dist/
+**/*.egg-info/
+
+# Runtime cache, downloads, and logs
+**/cache/
+**/data/
+**/logs/
+**/node_modules/
+**/*.log
+**/*.part
+**/*.corrupt-*
+**/*.db
+**/*.sqlite
+**/*.sqlite3
+**/*.pid
+
+# Upstream repository automation is not used by the combined BOT2 repository
+nonebot-plugin-parser/.github/
+
+# Editors and operating-system metadata
+.vscode/
+.idea/
+*.code-workspace
+.DS_Store
+Thumbs.db
+Desktop.ini
