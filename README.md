@@ -28,8 +28,6 @@ powershell -ExecutionPolicy Bypass -File .\scripts\setup.ps1
 
 这个脚本会创建本地 `.env` 配置、写入正确的缓存路径，并运行一次 `uv sync --locked`。只需首次运行一次。
 
-想了解项目使用的语言、模块协作方式和可扩展方向，可以阅读[项目技术说明](项目技术说明.md)。
-
 ### 3. 启动
 
 双击根目录的 `launch.bat`，或在 PowerShell 执行：
@@ -44,12 +42,12 @@ powershell -ExecutionPolicy Bypass -File .\scripts\start.ps1
 
 在 NapCat WebUI 的网络配置中新增 **WebSocket 客户端（反向 WebSocket）**：
 
-| 配置项 | 值 |
-| --- | --- |
-| 启用 | 开 |
-| URL | `ws://127.0.0.1:8080/onebot/v11/ws` |
-| Access Token | 留空 |
-| 重连间隔 | `5000` 毫秒 |
+| 配置项       | 值                                    |
+| ------------ | ------------------------------------- |
+| 启用         | 开                                    |
+| URL          | `ws://127.0.0.1:8080/onebot/v11/ws` |
+| Access Token | 留空                                  |
+| 重连间隔     | `5000` 毫秒                         |
 
 保存并重启网络配置。NoneBot 窗口出现 OneBot v11 连接成功日志后，在测试群发送 B 站或抖音链接即可。
 
@@ -106,15 +104,15 @@ PARSER_GROUP_BLACKLIST_ENABLED=true
 
 配置文件是 `qq-video-bot\.env.prod`：
 
-| 配置项 | 默认值 | 说明 |
-| --- | ---: | --- |
-| `HOST` | `127.0.0.1` | 仅允许本机访问 |
-| `PORT` | `8080` | OneBot 反向 WebSocket 服务端口 |
-| `PARSER_DURATION_MAXIMUM` | `480` | 最大视频时长，单位为秒 |
-| `PARSER_MAX_SIZE` | `90` | 最大下载大小，单位为 MB |
-| `PARSER_APPEND_URL` | `true` | 回复中附加原链接 |
-| `PARSER_USE_BASE64` | `false` | 使用本地路径发送媒体，降低内存占用 |
-| `PARSER_GROUP_BLACKLIST_ENABLED` | `true` | 默认允许所有群解析 |
+| 配置项                             |        默认值 | 说明                               |
+| ---------------------------------- | ------------: | ---------------------------------- |
+| `HOST`                           | `127.0.0.1` | 仅允许本机访问                     |
+| `PORT`                           |      `8080` | OneBot 反向 WebSocket 服务端口     |
+| `PARSER_DURATION_MAXIMUM`        |       `480` | 最大视频时长，单位为秒             |
+| `PARSER_MAX_SIZE`                |        `90` | 最大下载大小，单位为 MB            |
+| `PARSER_APPEND_URL`              |      `true` | 回复中附加原链接                   |
+| `PARSER_USE_BASE64`              |     `false` | 使用本地路径发送媒体，降低内存占用 |
+| `PARSER_GROUP_BLACKLIST_ENABLED` |      `true` | 默认允许所有群解析                 |
 
 修改 `PORT` 后，必须同步修改 NapCat WebSocket Client 的 URL。
 
