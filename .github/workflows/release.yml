@@ -1,0 +1,40 @@
+name: Build Release
+
+on:
+  push:
+    tags:
+      - "v*"
+  workflow_dispatch:
+    inputs:
+      version:
+        description: "Release version, for example v0.1.0"
+        required: true
+        default: "v0.1.0"
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: windows-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Build ZIP
+        id: meta
+        shell: pwsh
+        env:
+          RELEASE_VERSION: ${{ github.ref_name }}
+          MANUAL_VERSION: ${{ inputs.version }}
+        run: |
+          $version = if ($env:RELEASE_VERSION -like 'v*') { $env:RELEASE_VERSION } else { $env:MANUAL_VERSION }
+          "version=$version" >> $env:GITHUB_OUTPUT
+          .\scripts\package-release.ps1 -Version $version
+
+      - name: Publish GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ steps.meta.outputs.version }}
+          files: release/QQBot-${{ steps.meta.outputs.version }}.zip
+          generate_release_notes: true

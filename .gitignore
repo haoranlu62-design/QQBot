@@ -1,9 +1,11 @@
 # Local distribution copy
 sharedTips/
 
-# NapCat is a separately installed third-party runtime. Its configuration may
-# contain QQ account IDs, access tokens, login state, and QR codes.
-NapCat.Shell/
+# NapCat runtime state may contain QQ account IDs, access tokens, login state,
+# QR codes, cache files, and logs. Keep the distributable runtime binaries.
+NapCat.Shell/cache/
+NapCat.Shell/config/
+NapCat.Shell/logs/
 
 # Local environment and secrets
 **/.env
@@ -30,6 +32,7 @@ NapCat.Shell/
 **/htmlcov/
 
 # Build and packaging output
+release/
 **/build/
 **/dist/
 **/*.egg-info/
@@ -39,6 +42,8 @@ NapCat.Shell/
 **/data/
 **/logs/
 **/node_modules/
+!NapCat.Shell/node_modules/
+!NapCat.Shell/node_modules/**
 **/*.log
 **/*.part
 **/*.corrupt-*

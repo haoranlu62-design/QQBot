@@ -1,5 +1,8 @@
 # QQ Video Bot
 
+For the recommended Release installation, read the repository root
+[README.md](../README.md). This file documents the standalone NoneBot service.
+
 This is a minimal NoneBot2 application for parsing Bilibili and Douyin links
 in QQ groups through NapCat and OneBot v11.
 
