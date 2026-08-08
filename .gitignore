@@ -1,5 +1,6 @@
 # Local distribution copy
 sharedTips/
+/项目技术说明.md
 
 # NapCat runtime state may contain QQ account IDs, access tokens, login state,
 # QR codes, cache files, and logs. Keep the distributable runtime binaries.

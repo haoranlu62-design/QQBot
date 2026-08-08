@@ -28,6 +28,8 @@ powershell -ExecutionPolicy Bypass -File .\scripts\setup.ps1
 
 这个脚本会创建本地 `.env` 配置、写入正确的缓存路径，并运行一次 `uv sync --locked`。只需首次运行一次。
 
+想了解项目使用的语言、模块协作方式和可扩展方向，可以阅读[项目技术说明](项目技术说明.md)。
+
 ### 3. 启动
 
 双击根目录的 `launch.bat`，或在 PowerShell 执行：
